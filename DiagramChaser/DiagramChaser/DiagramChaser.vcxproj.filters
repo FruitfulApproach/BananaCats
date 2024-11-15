@@ -52,48 +52,24 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Object.cpp">
+    <ClCompile Include="Type.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MathBase.cpp">
+    <ClCompile Include="Term.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Category.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Morphism.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Proof.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Prop.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="IdentityMorphism.cpp">
+    <ClCompile Include="InferenceRule.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Object.h">
+    <ClInclude Include="Type.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MathBase.h">
+    <ClInclude Include="Term.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Category.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Morphism.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Proof.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Prop.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IdentityMorphism.h">
+    <ClInclude Include="InferenceRule.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
