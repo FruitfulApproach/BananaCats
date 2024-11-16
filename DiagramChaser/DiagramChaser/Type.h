@@ -7,52 +7,60 @@ class Type : public Term
 {
 public:
 	Type() : Term() {
-		typeName = "Anonymous";
 	}
-	Type(const std::string& typeName) : Term()
+
+	Type(const Type& source) : Term(source)
 	{
-		this->typeName = typeName;
 	}
-	Type(const Type& source) 
-		: Term(source)
+
+	virtual const Term* clone() const 
 	{
-		typeName = source.typeName;
+		return new Type(*this);
 	}
+
 	~Type();
-
-	std::string toString() const override { return typeName;  }
-	
-
-protected:
-	std::string typeName;
 };
 
 class DependentType : public Type
 {
 public:
-	DependentType(const Term& x, const Type& A, const std::string& typeName=nullptr) 
-		: Type(typeName)
+	DependentType(const Term* x, const Type* A) 
+		: Type(), term(x), type(A)
 	{
-		*term = x;
-		*type = A;
 	}
 
-	virtual Type* operator () (const Term& x) = 0;
+	DependentType(const DependentType& source)
+		: Type()
+	{
+		term = source.term->clone();
+		type = dynamic_cast<const Type*>(source.type->clone());
+	}
 
-	std::string toString() const {
+	virtual const Term* clone() const 
+	{
+		return new DependentType(*this);
+	}
+
+	virtual const Type* operator () (const Term& x) 
+	{
+		return nullptr; // TODO ??? later in the book
+	}
+
+	std::string toString() const 
+	{
 		return Type::toString() + ":" + type->str() + "→" + "Universe";
 	}
 
-protected:
-	Term* term;
-	Type* type;
+private:
+	const Term* term;
+	const Type* type;
 };
 
 class PiType : public DependentType
 {
 public:
-	PiType(const Term& x, const Type& A, const std::string& typeName)
-		: DependentType(x, A, "Π(" + x.str() + ":" + A.str() + ")" + typeName + "(" + x.str() + ")")
+	PiType(const Term* x, const Type* A)
+		: DependentType(x, A)
 	{
 	}
 };

@@ -14,15 +14,15 @@ int main(int argc, char *argv[])
     w.show();
 
     // TODO TEST REMOVE
-    Var b1 = b;
-    ZZ_8 _1(1);
-    ZZ_8 _2(2);
+    //Var b1 = b;
+    //ZZ_8 _1(1);
+    //ZZ_8 _2(2);
 
-    auto A = Type("A");
-    auto B = Type("B");
+    auto A = Term();
+    auto B = Type();
     //auto P = PiType(x, A, B(x))
 
-    qDebug() << b.toString();
+    qDebug() << A.toString();
 
     return a.exec();
 }

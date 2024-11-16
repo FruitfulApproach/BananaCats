@@ -5,6 +5,11 @@ Term::~Term()
 {
 }
 
+Term* Term::operator*(const Term& term) const
+{
+	return new Product(*this, term);
+}
+
 std::ostream& operator<<(std::ostream& os, const Term& t)
 {
 	os << t.toString();
