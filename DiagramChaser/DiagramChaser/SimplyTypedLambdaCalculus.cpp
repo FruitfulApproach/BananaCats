@@ -21,5 +21,12 @@ SimplyTypedLambdaCalculus::SimplyTypedLambdaCalculus(const Type* baseType)
 	productTypeIntro = InferenceRule({ &A_type, &B_type }, AxB_type);
 	functionTypeIntro = InferenceRule({ &A_type, &B_type }, AtoB_type);
 
-	addInferenceRules({ &baseTypeIntro, &productTypeIntro, &functionTypeIntro });
+	auto oneIsCtx = IsContext(String("1"));
+	emptyContext = InferenceRule({}, oneIsCtx);
+
+
+
+	addInferenceRules(
+		{ &baseTypeIntro, &productTypeIntro, &functionTypeIntro,
+		&emptyContext, &addToContext});
 }

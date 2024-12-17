@@ -12,9 +12,8 @@ public:
 	SimplyTypedLambdaCalculus(const Type* baseType);
 
 private:
-	InferenceRule baseTypeIntro;
-	InferenceRule productTypeIntro;
-	InferenceRule functionTypeIntro;
+	InferenceRule baseTypeIntro, productTypeIntro, functionTypeIntro,
+		emptyContext, addToContext;
 };
 
 

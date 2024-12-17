@@ -13,7 +13,7 @@ public:
 	{
 	}
 
-	virtual const Term* clone() const 
+	Term* clone() const 
 	{
 		return new Type(*this);
 	}
@@ -36,7 +36,7 @@ public:
 		type = dynamic_cast<const Type*>(source.type->clone());
 	}
 
-	virtual const Term* clone() const 
+	Term* clone() const 
 	{
 		return new DependentType(*this);
 	}

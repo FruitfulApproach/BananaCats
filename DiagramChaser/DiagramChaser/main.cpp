@@ -19,10 +19,12 @@ int main(int argc, char *argv[])
     //ZZ_8 _2(2);
 
     auto A = Term();
-    auto B = Type();
+
+    //auto f = B->_(B);
+    Term& f = B -> B() -> B();
     //auto P = PiType(x, A, B(x))
 
-    qDebug() << A.toString();
+    qDebug() << f.str();
 
     return a.exec();
 }

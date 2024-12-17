@@ -69,3 +69,27 @@ class WellFormed : public Judgement
 	}
 };
 
+class IsContext : public Judgement
+{
+public:
+	IsContext(const Term& term)
+		: term(term.clone())
+	{}
+
+	IsContext(const IsContext& source)
+	{
+		this->term = source.term->clone();
+	}
+
+	Judgement* clone() const {
+		return new IsContext(*this);
+	}
+
+	std::string toString() const override
+	{
+		return "|- " + term->str() + " ctx";
+	}
+
+private:
+	const Term* term;
+};

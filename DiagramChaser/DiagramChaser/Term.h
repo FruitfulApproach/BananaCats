@@ -6,6 +6,9 @@
 #include <typeinfo>
 #include <exception>
 
+class Var;
+extern Var a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z;
+extern Var A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
 
 class Term
 {
@@ -16,10 +19,11 @@ public:
 	{}
 	virtual ~Term();
 
-	virtual std::string toString() const 
-	{ 
+	virtual std::string toString() const
+	{
 		return objectToAddressString(this);
 	}
+
 	std::string str() const { return toString(); }
 	friend std::ostream& operator<<(std::ostream& os, const Term& t);
 
@@ -30,10 +34,10 @@ public:
 
 	virtual Term* operator * (const Term& term) const;
 
-	virtual Term* operator -> () const
-	{
-		return new _FunctionBuilder(*this);
-	}
+	virtual const Term* operator -> () const { return this; }		
+	// -> operator is Left-associative in C++; In Lean/Coq however, it is Right-associative!
+	
+	Term& B() const;
 };
 
 class Var : public Term
@@ -61,9 +65,6 @@ public:
 private:
 	std::string unicode;
 };
-
-extern Var a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z;
-extern Var A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
 
 
 template<typename BuiltinInt>
@@ -253,27 +254,6 @@ private:
 	Term* rhs;
 };
 
-// This is for internal use only - not typically used by the end-user except during syntax sugar of A->(B);
-class _FunctionBuilder : public Term
-{
-public:
-	_FunctionBuilder(const Term& domain)
-	{}
-
-	std::string toString() const override
-	{
-		return domain->str() + "→?";
-	}
-
-	Function* operator () (const Term& codomain) const
-	{
-		return new Function(*domain, codomain);
-	}
-
-private:
-	Term* domain;
-};
-
 
 class Function : public Term
 {
@@ -292,9 +272,35 @@ public:
 
 	std::string toString() const override
 	{
-		return domain->str() + "→" + codomain->str();
+		return "(" + domain->str() + " -> " + codomain->str() + ")";  
 	}
 
 private:
 	Term* domain, * codomain;
 };
+
+//// This is for internal use only - not typically used by the end-user except during syntax sugar of A->(B);
+//class _FunctionBuilder : public Term
+//{
+//public:
+//	_FunctionBuilder(const Term& domain)
+//	{}
+//
+//	std::string toString() const override
+//	{
+//		return domain->str() + "→?";
+//	}
+//
+//	Function* operator () (const Term& codomain) const
+//	{
+//		return new Function(*domain, codomain);
+//	}
+//
+//private:
+//	Term* domain;
+//};
+
+inline Term& Term::B() const
+{
+	return *(new Function(*this, ::B));
+}
