@@ -11,6 +11,18 @@ DiagramChaser::DiagramChaser(QWidget *parent)
     setCentralWidget(view);
     scene = new DiagramChaserInteractiveScene();
     view->setScene(scene);
+    connect(ui->actionNewCategory, &QAction::triggered, this, &DiagramChaser::defineCategory);
+}
+
+void DiagramChaser::defineCategory()
+{
+    Category* category = new Category(this);
+    auto result = category->exec();
+
+    if (result == Category::Accepted)
+    {
+        
+    }
 }
 
 DiagramChaser::~DiagramChaser()

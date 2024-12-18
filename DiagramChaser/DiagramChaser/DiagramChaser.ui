@@ -23,17 +23,17 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuDefinitions">
+   <widget class="QMenu" name="menuCategories">
     <property name="title">
-     <string>Definitions</string>
+     <string>Categories</string>
     </property>
-    <addaction name="actionTypes"/>
-    <addaction name="actionTypes_2"/>
+    <addaction name="actionNewCategory"/>
+    <addaction name="actionListCategories"/>
     <addaction name="separator"/>
-    <addaction name="actionLoad_Types"/>
-    <addaction name="actionSave_Types"/>
+    <addaction name="actionImportCategories"/>
+    <addaction name="actionExportCategories"/>
    </widget>
-   <addaction name="menuDefinitions"/>
+   <addaction name="menuCategories"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -44,24 +44,24 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionTypes">
+  <action name="actionNewCategory">
    <property name="text">
-    <string>New Definition</string>
+    <string>New Category</string>
    </property>
   </action>
-  <action name="actionTypes_2">
+  <action name="actionListCategories">
    <property name="text">
-    <string>List Definitions</string>
+    <string>List Categories</string>
    </property>
   </action>
-  <action name="actionLoad_Types">
+  <action name="actionImportCategories">
    <property name="text">
-    <string>Import Definitions</string>
+    <string>Import Categories</string>
    </property>
   </action>
-  <action name="actionSave_Types">
+  <action name="actionExportCategories">
    <property name="text">
-    <string>Export Definitions</string>
+    <string>Export Categories</string>
    </property>
   </action>
  </widget>

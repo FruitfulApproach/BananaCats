@@ -108,6 +108,7 @@
     <QtMoc Include="DiagramChaser.h" />
     <ClCompile Include="Category.cpp" />
     <ClCompile Include="DiagramChaser.cpp" />
+    <ClCompile Include="DiagramChaserApp.cpp" />
     <ClCompile Include="DiagramChaserInteractiveScene.cpp" />
     <ClCompile Include="DiagramChaserScene.cpp" />
     <ClCompile Include="DiagramChaserView.cpp" />
@@ -118,6 +119,7 @@
     <QtMoc Include="DiagramChaserScene.h" />
     <QtMoc Include="DiagramChaserView.h" />
     <QtMoc Include="Category.h" />
+    <ClInclude Include="DiagramChaserApp.h" />
     <ClInclude Include="DiagramChaserInteractiveScene.h" />
     <ClInclude Include="stdafx.h" />
     <ClCompile Include="Node.cpp" />

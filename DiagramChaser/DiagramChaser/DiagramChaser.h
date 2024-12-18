@@ -5,6 +5,7 @@
 #include "DiagramChaserInteractiveScene.h"
 #include "DiagramChaserView.h"
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class DiagramChaserClass; };
 QT_END_NAMESPACE
@@ -16,6 +17,9 @@ class DiagramChaser : public QMainWindow
 public:
     DiagramChaser(QWidget *parent = nullptr);
     ~DiagramChaser();
+
+private slots:
+    void defineCategory();
 
 private:
     Ui::DiagramChaserClass *ui;

@@ -15,6 +15,6 @@ public:
 	Category(QWidget *parent = nullptr);
 	~Category();
 
-private:
+public:
 	Ui::CategoryClass *ui;
 };

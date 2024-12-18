@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>588</width>
-    <height>400</height>
+    <width>527</width>
+    <height>389</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,22 +31,15 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="label_9">
-     <property name="text">
-      <string>Builtins:</string>
-     </property>
-    </widget>
-   </item>
    <item row="1" column="3">
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="categoryName">
      <property name="text">
       <string>M</string>
      </property>
     </widget>
    </item>
    <item row="0" column="3">
-    <widget class="QComboBox" name="comboBox">
+    <widget class="QComboBox" name="categoryTypes">
      <item>
       <property name="text">
        <string>Monoid</string>
@@ -87,7 +80,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="comboBox_2">
+        <widget class="QComboBox" name="objectType">
          <item>
           <property name="text">
            <string>Atomic nodes (No children)</string>
@@ -103,7 +96,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QComboBox" name="objectLabelChoice">
+        <widget class="QComboBox" name="objectLabels">
          <item>
           <property name="text">
            <string>●</string>
@@ -163,7 +156,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="comboBox_3">
+        <widget class="QComboBox" name="arrowType">
          <item>
           <property name="text">
            <string>General morphisms</string>
@@ -209,7 +202,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QComboBox" name="objectLabelChoice_2">
+        <widget class="QComboBox" name="arrowLabels">
          <item>
           <property name="text">
            <string>Latin lower (with prime ticks)</string>
@@ -245,7 +238,7 @@
         </widget>
        </item>
        <item row="3" column="0" colspan="2">
-        <widget class="QPlainTextEdit" name="objectLabelRegex_2">
+        <widget class="QPlainTextEdit" name="arrowLabelRegex">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -470,7 +463,7 @@
      </widget>
      <widget class="QWidget" name="initialTerminalObjectsTab">
       <attribute name="title">
-       <string>Initials/Terminals</string>
+       <string>Initial/Terminal Objects</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
@@ -552,7 +545,7 @@
        <item row="0" column="2">
         <widget class="QLineEdit" name="binaryProduct">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="text">
           <string>A\times B</string>
@@ -562,13 +555,13 @@
        <item row="0" column="0">
         <widget class="QCheckBox" name="hasBinaryProducts">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="text">
           <string>Any two objects A,B have a binary product:</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -587,22 +580,15 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="nameParametersCSV">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="text">
-          <string>R:Ring</string>
+          <string/>
          </property>
          <property name="placeholderText">
           <string>A comma-separated list of typed parameters such as R:Ring</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="typesButton">
-         <property name="text">
-          <string>Categories (&quot;Types&quot;)...</string>
          </property>
         </widget>
        </item>
@@ -637,20 +623,27 @@
      </property>
     </widget>
    </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Types:</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>comboBox</tabstop>
-  <tabstop>lineEdit</tabstop>
+  <tabstop>categoryTypes</tabstop>
+  <tabstop>categoryName</tabstop>
   <tabstop>lineEdit_3</tabstop>
   <tabstop>propertyTabs</tabstop>
-  <tabstop>comboBox_2</tabstop>
-  <tabstop>objectLabelChoice</tabstop>
+  <tabstop>objectType</tabstop>
+  <tabstop>objectLabels</tabstop>
   <tabstop>objectLabelRegex</tabstop>
-  <tabstop>comboBox_3</tabstop>
-  <tabstop>objectLabelChoice_2</tabstop>
-  <tabstop>objectLabelRegex_2</tabstop>
+  <tabstop>arrowType</tabstop>
+  <tabstop>arrowLabels</tabstop>
+  <tabstop>arrowLabelRegex</tabstop>
   <tabstop>numberOfObjects</tabstop>
   <tabstop>numberOfArrows</tabstop>
   <tabstop>checkBox_2</tabstop>
@@ -669,28 +662,7 @@
   <tabstop>terminalObject</tabstop>
   <tabstop>hasBinaryProducts</tabstop>
   <tabstop>binaryProduct</tabstop>
-  <tabstop>lineEdit_2</tabstop>
-  <tabstop>typesButton</tabstop>
-  <tabstop>lineEdit_11</tabstop>
-  <tabstop>checkBox_7</tabstop>
-  <tabstop>checkBox_8</tabstop>
-  <tabstop>lineEdit_12</tabstop>
-  <tabstop>hasZeroObject_2</tabstop>
-  <tabstop>zeroObject_2</tabstop>
-  <tabstop>hasInitialObject_2</tabstop>
-  <tabstop>hasTerminalObject_2</tabstop>
-  <tabstop>terminalObject_2</tabstop>
-  <tabstop>initialObject_2</tabstop>
-  <tabstop>binaryProduct_2</tabstop>
-  <tabstop>hasBinaryProducts_2</tabstop>
-  <tabstop>lineEdit_13</tabstop>
-  <tabstop>typesButton_2</tabstop>
-  <tabstop>numberOfArrows_2</tabstop>
-  <tabstop>checkBox_6</tabstop>
-  <tabstop>lineEdit_10</tabstop>
-  <tabstop>numberOfObjects_2</tabstop>
-  <tabstop>checkBox_5</tabstop>
-  <tabstop>lineEdit_9</tabstop>
+  <tabstop>nameParametersCSV</tabstop>
  </tabstops>
  <resources/>
  <connections/>

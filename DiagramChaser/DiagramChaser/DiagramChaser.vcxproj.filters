@@ -67,6 +67,9 @@
     <ClCompile Include="Category.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DiagramChaserApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Node.h">
@@ -84,6 +87,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DiagramChaserInteractiveScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiagramChaserApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
