@@ -10,4 +10,8 @@ public:
 	DiagramChaserScene(QWidget *parent=nullptr);
 	~DiagramChaserScene();
 
+	void drawBackground(QPainter* painter, const QRectF& rect) override;
+
+private:
+	QString ambientCategory = "BigCat";
 };

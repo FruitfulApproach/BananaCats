@@ -15,10 +15,9 @@ void DiagramChaserInteractiveScene::mouseDoubleClickEvent(QGraphicsSceneMouseEve
 	if (itemAtMouse == nullptr)
 	{
 		auto node = new Node();
-		node->setFlags(QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable |
+		node->setFlags(node->flags() | QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable |
 			QGraphicsItem::ItemIsMovable);
 		node->setPos(event->scenePos());
-		addItem(node);
-		
+		addItem(node);		
 	}
 }
