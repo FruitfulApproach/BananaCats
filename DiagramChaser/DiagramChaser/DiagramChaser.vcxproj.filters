@@ -64,6 +64,9 @@
     <ClCompile Include="DiagramChaserInteractiveScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Category.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Node.h">
@@ -75,10 +78,18 @@
     <QtMoc Include="DiagramChaserView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Category.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DiagramChaserInteractiveScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="Category.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

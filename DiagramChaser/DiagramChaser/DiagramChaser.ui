@@ -1,28 +1,73 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>DiagramChaserClass</class>
- <widget class="QMainWindow" name="DiagramChaserClass" >
-  <property name="objectName" >
-   <string notr="true">DiagramChaserClass</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QMainWindow" name="DiagramChaserClass">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>425</width>
+    <height>230</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>DiagramChaser</string>
-  </property>  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>425</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDefinitions">
+    <property name="title">
+     <string>Definitions</string>
+    </property>
+    <addaction name="actionTypes"/>
+    <addaction name="actionTypes_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionLoad_Types"/>
+    <addaction name="actionSave_Types"/>
+   </widget>
+   <addaction name="menuDefinitions"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionTypes">
+   <property name="text">
+    <string>New Definition</string>
+   </property>
+  </action>
+  <action name="actionTypes_2">
+   <property name="text">
+    <string>List Definitions</string>
+   </property>
+  </action>
+  <action name="actionLoad_Types">
+   <property name="text">
+    <string>Import Definitions</string>
+   </property>
+  </action>
+  <action name="actionSave_Types">
+   <property name="text">
+    <string>Export Definitions</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources>
-   <include location="DiagramChaser.qrc"/>
+  <include location="DiagramChaser.qrc"/>
  </resources>
  <connections/>
-</UI>
+</ui>
