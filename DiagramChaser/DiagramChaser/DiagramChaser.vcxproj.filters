@@ -64,7 +64,7 @@
     <ClCompile Include="DiagramChaserInteractiveScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Category.cpp">
+    <ClCompile Include="CategoryDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DiagramChaserApp.cpp">
@@ -81,7 +81,7 @@
     <QtMoc Include="DiagramChaserView.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="Category.h">
+    <QtMoc Include="CategoryDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -94,7 +94,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="Category.ui">
+    <QtUic Include="CategoryDialog.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

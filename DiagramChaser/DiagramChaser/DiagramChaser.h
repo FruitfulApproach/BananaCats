@@ -4,6 +4,7 @@
 #include "ui_DiagramChaser.h"
 #include "DiagramChaserInteractiveScene.h"
 #include "DiagramChaserView.h"
+#include "CategoryDialog.h"
 
 
 QT_BEGIN_NAMESPACE

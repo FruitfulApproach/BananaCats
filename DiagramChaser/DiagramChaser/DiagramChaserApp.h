@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 #include <QApplication>
+#include "CategoryDialog.h"
 
 
 class DiagramChaserApp  : public QApplication
@@ -10,7 +11,7 @@ public:
 	DiagramChaserApp(int& argc, char** argv);
 	~DiagramChaserApp();
 
-	void addCategory(Category* category)
+	void addCategory(CategoryDialog* category)
 	{
 		categories[category->ui->categoryName->text()] = category;
 	}
@@ -20,22 +21,22 @@ public:
 		return categories.contains(categoryName);
 	}
 	
-	void removeCategory(Category* category)
+	void removeCategory(CategoryDialog* category)
 	{
 		categories.remove(category->ui->categoryName->text());
 	}
 
-	Category*  category(const QString& categoryName)
+	CategoryDialog*  category(const QString& categoryName)
 	{
 		return categories[categoryName];
 	}
 	
-	QList<Category*> listCategoriesAlphabetically() 
+	QList<CategoryDialog*> listCategoriesAlphabetically() 
 	{
 		auto categoryList = categories.values();
 
 		std::sort(categoryList.begin(), categoryList.end(),
-			[](const Category*& A, const Category*& B) {
+			[](CategoryDialog*& A, CategoryDialog*& B) {
 				return A->ui->categoryName->text() < B->ui->categoryName->text();
 			});
 		
@@ -44,5 +45,5 @@ public:
 
 
 private:
-	QMap<QString, Category*> categories;
+	QMap<QString, CategoryDialog*> categories;
 };

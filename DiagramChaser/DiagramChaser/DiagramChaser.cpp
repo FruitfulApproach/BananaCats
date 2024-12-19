@@ -16,10 +16,10 @@ DiagramChaser::DiagramChaser(QWidget *parent)
 
 void DiagramChaser::defineCategory()
 {
-    Category* category = new Category(this);
+    CategoryDialog* category = new CategoryDialog(this);
     auto result = category->exec();
 
-    if (result == Category::Accepted)
+    if (result == CategoryDialog::Accepted)
     {
         
     }

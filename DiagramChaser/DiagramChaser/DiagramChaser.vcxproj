@@ -103,10 +103,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="DiagramChaser.qrc" />
-    <QtUic Include="Category.ui" />
+    <QtUic Include="CategoryDialog.ui" />
     <QtUic Include="DiagramChaser.ui" />
     <QtMoc Include="DiagramChaser.h" />
-    <ClCompile Include="Category.cpp" />
+    <ClCompile Include="CategoryDialog.cpp" />
     <ClCompile Include="DiagramChaser.cpp" />
     <ClCompile Include="DiagramChaserApp.cpp" />
     <ClCompile Include="DiagramChaserInteractiveScene.cpp" />
@@ -118,7 +118,7 @@
     <QtMoc Include="Node.h" />
     <QtMoc Include="DiagramChaserScene.h" />
     <QtMoc Include="DiagramChaserView.h" />
-    <QtMoc Include="Category.h" />
+    <QtMoc Include="CategoryDialog.h" />
     <ClInclude Include="DiagramChaserApp.h" />
     <ClInclude Include="DiagramChaserInteractiveScene.h" />
     <ClInclude Include="stdafx.h" />
