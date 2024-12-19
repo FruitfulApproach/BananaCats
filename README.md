@@ -7,3 +7,5 @@ A Qt/C++ desktop application for chasing diagrammatic proofs such as for the Sna
 2. Definitions are recursive, so for example the morphisms in a monoid could very well be functors and so on...
 3. Ability to take functorial images within a diagram chaser scene and auto-update the image labels as the input diagram changes.
 4. Support for abstract abelian category diagram chases as well as "taking elements."
+5. Ability to define custom categories within the app.
+6. Easily extendible in C++ via class inheritance.
