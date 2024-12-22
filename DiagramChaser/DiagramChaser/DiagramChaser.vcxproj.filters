@@ -70,6 +70,27 @@
     <ClCompile Include="DiagramChaserApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Category.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Semicategory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Semigroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Arrow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoLabelIndexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Node.h">
@@ -84,12 +105,33 @@
     <QtMoc Include="CategoryDialog.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="Label.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DiagramChaserApp.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Semicategory.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Object.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Arrow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="AutoLabelIndexer.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DiagramChaserInteractiveScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DiagramChaserApp.h">
+    <ClInclude Include="Category.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Semigroup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

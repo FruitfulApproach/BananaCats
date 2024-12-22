@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>425</width>
-    <height>230</height>
+    <width>484</width>
+    <height>356</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>425</width>
+     <width>484</width>
      <height>22</height>
     </rect>
    </property>
@@ -33,7 +33,14 @@
     <addaction name="actionImportCategories"/>
     <addaction name="actionExportCategories"/>
    </widget>
+   <widget class="QMenu" name="menuFunctors">
+    <property name="title">
+     <string>Functors</string>
+    </property>
+    <addaction name="actionListDiagrams"/>
+   </widget>
    <addaction name="menuCategories"/>
+   <addaction name="menuFunctors"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -62,6 +69,11 @@
   <action name="actionExportCategories">
    <property name="text">
     <string>Export Categories</string>
+   </property>
+  </action>
+  <action name="actionListDiagrams">
+   <property name="text">
+    <string>List Diagrams</string>
    </property>
   </action>
  </widget>

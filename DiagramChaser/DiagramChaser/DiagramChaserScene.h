@@ -1,6 +1,7 @@
 #pragma once
 
 #include <QGraphicsScene>
+#include "Semicategory.h"
 
 class DiagramChaserScene  : public QGraphicsScene
 {
@@ -12,6 +13,6 @@ public:
 
 	void drawBackground(QPainter* painter, const QRectF& rect) override;
 
-private:
-	QString ambientCategory = "BigCat";
+protected:
+	Semicategory* ambientCategory = nullptr; 
 };

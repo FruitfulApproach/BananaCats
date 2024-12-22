@@ -1,11 +1,15 @@
 #include "stdafx.h"
 #include "Node.h"
 
-Node::Node(QGraphicsItem *parent)
+Node::Node(Label* label, QGraphicsItem* parent)
 	: QGraphicsObject(parent)
 {
-	setFlags(ItemSendsGeometryChanges|ItemSendsScenePositionChanges);
+	setFlags(ItemSendsGeometryChanges | ItemSendsScenePositionChanges);
+	this->label = label;
+	label->setParentItem(this);
 }
+
+
 
 QRectF Node::boundingRect() const
 {
@@ -50,6 +54,7 @@ void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 	QGraphicsObject::mouseReleaseEvent(event);
 }
 
+
 void Node::handleCollisions(const QPointF& deltaPos)
 {
 	auto itemsColliding = collidingItems();
@@ -60,7 +65,7 @@ void Node::handleCollisions(const QPointF& deltaPos)
 
 		for (auto item : itemsColliding)
 		{
-			auto nodeItem = dynamic_cast<Node*>(item);
+			auto nodeItem = qgraphicsitem_cast<Node*>(item);
 
 			if (nodeItem != nullptr)
 			{

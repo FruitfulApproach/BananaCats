@@ -17,6 +17,7 @@ DiagramChaser::DiagramChaser(QWidget *parent)
 void DiagramChaser::defineCategory()
 {
     CategoryDialog* category = new CategoryDialog(this);
+    category->ui->categoryTypes->addItems(qobject_cast< DiagramChaserApp*>(QApplication::instance())->listCategoriesAlphabetically());
     auto result = category->exec();
 
     if (result == CategoryDialog::Accepted)

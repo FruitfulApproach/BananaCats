@@ -10,14 +10,59 @@ DiagramChaserInteractiveScene::~DiagramChaserInteractiveScene()
 
 void DiagramChaserInteractiveScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent * event)
 {
-	auto itemAtMouse = itemAt(event->scenePos(), QTransform());
+	QList<QGraphicsItem*> itemsAtMouse = items(event->scenePos());
 
-	if (itemAtMouse == nullptr)
+	Node* node = nullptr;
+	Semicategory* category = nullptr;
+
+	if (itemsAtMouse.length() ==  0)
 	{
-		auto node = new Node();
-		node->setFlags(node->flags() | QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable |
-			QGraphicsItem::ItemIsMovable);
+		node = ambientCategory->createObject();
 		node->setPos(event->scenePos());
-		addItem(node);		
+		addItem(node);
 	}
+	else 
+	{
+		for (auto* item : itemsAtMouse)
+		{
+			Label* textItem = qgraphicsitem_cast<Label*>(item);
+			Node* nodeParent = nullptr;
+
+			if (textItem != nullptr)
+			{
+				nodeParent = qgraphicsitem_cast<Node*>(textItem->parentItem());
+			}
+		
+			if (nodeParent == nullptr)
+			{
+				category = qgraphicsitem_cast<Semicategory*>(nodeParent);
+			}
+
+			if (category != nullptr)
+			{
+				node = category->createObject();
+				node->setPos(event->scenePos());
+				node->setParentItem(category);
+				break;
+			};
+		}
+
+		if (category == nullptr)
+		{
+			node = ambientCategory->createObject();
+			node->setPos(event->scenePos());
+			addItem(node);
+		}
+	}
+
+	if (node == nullptr)
+		DiagramChaserScene::mouseDoubleClickEvent(event);
+}
+
+void DiagramChaserInteractiveScene::addItem(QGraphicsItem* item)
+{
+	item->setFlags(item->flags() | QGraphicsItem::ItemIsMovable |
+		QGraphicsItem::ItemIsSelectable | QGraphicsItem::ItemIsFocusable);
+
+	DiagramChaserScene::addItem(item);
 }

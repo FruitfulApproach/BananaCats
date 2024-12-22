@@ -9,6 +9,7 @@ A Qt/C++ desktop application for chasing diagrammatic proofs such as for the Sna
 + Support for abstract abelian category diagram chases as well as "taking elements."
 + Ability to define custom categories within the app.
 + Easily extendible in C++ via class inheritance.
++ Collision handling between objects, so things can't overlap & hide one another.
 
 
 ## License

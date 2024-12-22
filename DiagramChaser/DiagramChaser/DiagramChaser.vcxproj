@@ -63,6 +63,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -106,12 +111,16 @@
     <QtUic Include="CategoryDialog.ui" />
     <QtUic Include="DiagramChaser.ui" />
     <QtMoc Include="DiagramChaser.h" />
+    <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="AutoLabelIndexer.cpp" />
+    <ClCompile Include="Category.cpp" />
     <ClCompile Include="CategoryDialog.cpp" />
     <ClCompile Include="DiagramChaser.cpp" />
     <ClCompile Include="DiagramChaserApp.cpp" />
     <ClCompile Include="DiagramChaserInteractiveScene.cpp" />
     <ClCompile Include="DiagramChaserScene.cpp" />
     <ClCompile Include="DiagramChaserView.cpp" />
+    <ClCompile Include="Label.cpp" />
     <ClCompile Include="main.cpp" />
     <None Include="DiagramChaser.ico" />
     <ResourceCompile Include="DiagramChaser.rc" />
@@ -119,10 +128,20 @@
     <QtMoc Include="DiagramChaserScene.h" />
     <QtMoc Include="DiagramChaserView.h" />
     <QtMoc Include="CategoryDialog.h" />
-    <ClInclude Include="DiagramChaserApp.h" />
+    <QtMoc Include="Arrow.h" />
+    <QtMoc Include="AutoLabelIndexer.h" />
+    <ClInclude Include="Category.h" />
+    <QtMoc Include="DiagramChaserApp.h" />
     <ClInclude Include="DiagramChaserInteractiveScene.h" />
+    <QtMoc Include="Label.h" />
+    <QtMoc Include="Object.h" />
+    <QtMoc Include="Semicategory.h" />
+    <ClInclude Include="Semigroup.h" />
     <ClInclude Include="stdafx.h" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Semicategory.cpp" />
+    <ClCompile Include="Semigroup.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">Create</PrecompiledHeader>

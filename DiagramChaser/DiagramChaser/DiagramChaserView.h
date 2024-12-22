@@ -1,6 +1,5 @@
 #pragma once
 
-#include "stdafx.h"
 #include <QGraphicsView>
 
 class DiagramChaserView  : public QGraphicsView
@@ -11,4 +10,18 @@ public:
 	DiagramChaserView(QWidget *parent=nullptr);
 	~DiagramChaserView();
 
+	virtual bool isCurrentlyEditingScene() const {
+		return false;
+	}
+
+};
+
+
+class DiagramChaserInteractiveView : public DiagramChaserView
+{
+public:
+
+	bool isCurrentlyEditingScene() const override {
+		return true;
+	}
 };

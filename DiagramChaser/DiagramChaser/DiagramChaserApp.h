@@ -3,47 +3,47 @@
 #include "stdafx.h"
 #include <QApplication>
 #include "CategoryDialog.h"
+#include "Semicategory.h"
 
 
 class DiagramChaserApp  : public QApplication
 {
+	Q_OBJECT
+
 public:
+	
 	DiagramChaserApp(int& argc, char** argv);
 	~DiagramChaserApp();
 
-	void addCategory(CategoryDialog* category)
+	Semicategory* setDefaultAmbientCategory(const QString& typedName) {
+		defaultAmbientCategoryForScenes = semicategories[typedName];
+	}
+
+	Semicategory* defaultAmbientCategory() { return defaultAmbientCategoryForScenes; }
+
+	void addCategory(Semicategory* category)
 	{
-		categories[category->ui->categoryName->text()] = category;
+		semicategories[category->name()] = category;
 	}
 
 	bool containsCategoryNamed(const QString& categoryName)
 	{
-		return categories.contains(categoryName);
+		return semicategories.contains(categoryName);
 	}
 	
-	void removeCategory(CategoryDialog* category)
+	void removeCategory(Semicategory* category)
 	{
-		categories.remove(category->ui->categoryName->text());
+		semicategories.remove(category->name());
 	}
 
-	CategoryDialog*  category(const QString& categoryName)
+	Semicategory* category(const QString& categoryName)
 	{
-		return categories[categoryName];
+		return semicategories[categoryName];
 	}
 	
-	QList<CategoryDialog*> listCategoriesAlphabetically() 
-	{
-		auto categoryList = categories.values();
-
-		std::sort(categoryList.begin(), categoryList.end(),
-			[](CategoryDialog*& A, CategoryDialog*& B) {
-				return A->ui->categoryName->text() < B->ui->categoryName->text();
-			});
-		
-		return categoryList;
-	}
-
+	QStringList listCategoriesAlphabetically() const;
 
 private:
-	QMap<QString, CategoryDialog*> categories;
+	QMap<QString, Semicategory*> semicategories;
+	Semicategory* defaultAmbientCategoryForScenes = nullptr;
 };
