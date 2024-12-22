@@ -1,6 +1,6 @@
 # DiagramDetective 🕵🏾‍♀️
 
-A Qt/C++ desktop application for chasing diagrammatic proofs such as for the Snake Lemma in Homological Algebra.
+A PyQt5 desktop application for chasing diagrammatic proofs such as for the Snake Lemma in Homological Algebra.
 
 ## Features
 + A monoid is modeled as a category with one object, ie. not strictly as a set with an associative binary op.
@@ -8,7 +8,7 @@ A Qt/C++ desktop application for chasing diagrammatic proofs such as for the Sna
 + Ability to take functorial images within a diagram chaser scene and auto-update the image labels as the input diagram changes.
 + Support for abstract abelian category diagram chases as well as "taking elements."
 + Ability to define custom categories within the app.
-+ Easily extendible in C++ via class inheritance.
++ Easily extendible in Python via class inheritance.
 + Collision handling between objects, so things can't overlap & hide one another.
 
 
